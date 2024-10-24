@@ -14,7 +14,7 @@ RUN npm i
 RUN npm i pnpm
 
 # Copy the rest of the application code to the working directory
-COPY web/app .
+COPY web/ .
 RUN ls
 
 # Build the Next.js application

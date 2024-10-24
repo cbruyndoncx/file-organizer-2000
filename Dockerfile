@@ -3,11 +3,9 @@ FROM node:18
 
 # Set the working directory in the container
 WORKDIR /app
-RUN ls
 
 # Copy package.json and package-lock.json to the working directory
-COPY web/package*.json ./
-RUN ls
+COPY web/package*.json .
 
 # Install the application dependencies
 RUN npm i
@@ -15,10 +13,9 @@ RUN npm i pnpm
 
 # Copy the rest of the application code to the working directory
 COPY web/ .
-RUN ls
 
 # Build the Next.js application
-RUN npm run build:self-host
+RUN npm run build
 
 # Expose the port on which the application will run
 EXPOSE 3000

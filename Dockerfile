@@ -15,10 +15,10 @@ RUN npm i pnpm
 COPY web/ .
 
 # Build the Next.js application
-RUN npm run build
+RUN npm run build:selfhost
 
 # Expose the port on which the application will run
-EXPOSE 3000
+#EXPOSE 3000
 
 # Set the command to run the application
 CMD ["npm", "start"]

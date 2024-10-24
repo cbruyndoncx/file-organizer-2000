@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm ci
 
 # Copy the rest of the application code to the working directory
-COPY app/ .
+COPY . .
 
 # Build the Next.js application
 RUN npm run build

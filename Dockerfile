@@ -9,6 +9,7 @@ COPY web/package*.json ./
 
 # Install the application dependencies
 RUN npm i
+RUN npm i pnpm
 
 # Copy the rest of the application code to the working directory
 COPY web/app .

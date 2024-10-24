@@ -15,7 +15,7 @@ RUN npm i pnpm
 COPY web/ .
 
 # Build the Next.js application
-RUN npm run build:selfhost
+RUN npm run build:self-host
 
 # Expose the port on which the application will run
 #EXPOSE 3000

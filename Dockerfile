@@ -5,16 +5,16 @@ FROM node:18
 WORKDIR /app
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY web/package*.json ./
 
 # Install the application dependencies
-RUN npm ci
+RUN npm i
 
 # Copy the rest of the application code to the working directory
-COPY . .
+COPY web/app .
 
 # Build the Next.js application
-RUN npm run build
+RUN npm run build:self-host
 
 # Expose the port on which the application will run
 EXPOSE 3000
